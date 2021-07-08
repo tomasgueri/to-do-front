@@ -42,10 +42,10 @@ export default function SingleTask({
     try {
       const task = { id: folderId, i: index };
       await axios.put("/folder/delete", task);
-      getFolder()
     } catch (error) {
-      console.log(error);
+        console.log(error);
     }
+    getFolder();
   };
 
   const handleSubmit = async (event) => {
