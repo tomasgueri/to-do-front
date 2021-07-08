@@ -11,11 +11,12 @@ No script is required for the back-end.
 
 
 ## Steps to run the project locally. 
-> Frontend:
-Step 1 Clone: GitHub https://github.com/tomasgueri/to-do-front.git
-Step 2: npm i 
-Step 3: npm start
-> Backend: 
+- Frontend:
+- Step 1 Clone: GitHub https://github.com/tomasgueri/to-do-front.git
+- Step 2: npm i 
+- Step 3: npm start
+
+- Backend: 
 - Step 1 Clone: GitHub https://github.com/tomasgueri/to-do-back
 - Step 2: npm i 
 - Step 3: npm run dev
