@@ -1,0 +1,75 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cards-folder {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: start;
+  width: 30%;
+  height: 250px;
+  padding: 0.7rem 1rem;
+  color: #282c34;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+.cards-folder:hover {
+  color: #282c34 !important;
+}
+
+.btn-edit {
+  width: 30px;
+  height: 30px;
+}
+.btn-delete {
+  width: 30px;
+  height: 30px;
+}
+.List {
+  display: flex;
+  padding: 1rem 0 0 0;
+  border-bottom: 1px solid black;
+}
