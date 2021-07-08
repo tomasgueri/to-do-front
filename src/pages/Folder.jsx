@@ -1,22 +1,28 @@
-import { NavLink } from "react-router-dom";
-import { Nav, Button } from "react-bootstrap";
 import React from "react";
-import image1 from '../assets/img/pc-code.jpg'
+import { useEffect, useState } from "react";
+import axios from "axios";
+import SingleFolder from '../components/SingleFolder'
 
 export default function Folder() {
+  const [folders, setFolders] = useState()
+
+  useEffect(() => {
+        const request = async () => {
+            const { data } = await axios.get("/folder");
+            setFolders(data);
+        };
+        request();
+}, []);
+  console.log('folder', folders)
   return (
     <>
       <div className="container mt-5 pt-5">
         <div className="row justify-content-around">
-          <Nav.Link to="/ToDo" className="cards-folder" style={{backgroundImage: "url(" + image1 + ")"}} as={NavLink}>
-            {/* <div className="cards-folder"> */}
-              <p className="">Work</p>
-              <Button className="btn-delete" variant="danger" size="sm"><i class="bi bi-trash-fill"></i></Button>{' '}
-            {/* </div> */}
-          </Nav.Link>
-          <div className="cards-folder"></div>
-          <div className="cards-folder"></div>
-          <div className="cards-folder"></div>
+          
+          { folders?.map((folder, index) => (
+            <SingleFolder folder={folder} key={index} />
+          )) }
+          
         </div>
       </div>
     </>

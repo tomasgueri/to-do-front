@@ -60,16 +60,20 @@
   color: #282c34 !important;
 }
 
-.btn-edit {
+.btn-action-task {
   width: 30px;
   height: 30px;
 }
-.btn-delete {
-  width: 30px;
+.btn-save {
+  width: 60px;
   height: 30px;
 }
 .List {
   display: flex;
-  padding: 1rem 0 0 0;
+  align-items: center;
+  padding: 0 0 0 0;
   border-bottom: 1px solid black;
+}
+.form-group {
+  margin-bottom: 0px !important;
 }

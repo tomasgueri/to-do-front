@@ -9,6 +9,8 @@ import NavReactB from "./components/NavReactB";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
+
+
   return (
     <div className="App">
       <NavReactB />
@@ -16,7 +18,7 @@ function App() {
         <Route path="/" exact>
           <Folder />
         </Route>
-        <Route path="/ToDo" exact>
+        <Route path="/ToDo/:id" exact>
           <ToDo />
         </Route>
         <Route path="/Login" exact>
