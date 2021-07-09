@@ -71,7 +71,7 @@ export default function SingleTask({
     <>
       <div className="List">
         <Form onSubmit={handleSubmit} className="col-11 px-0 d-flex">
-        { action === 'edit' ? 
+        { action === 'edit' && 
           <Form.Group className="pt-2 col-1" controlId="formBasicCheckbox">
             <Form.Check
               type="checkbox"
@@ -80,16 +80,17 @@ export default function SingleTask({
               checked={checkInput}
               onChange={(e) => handleChangeCheck(e)}
             />
-          </Form.Group> :
-          <p className="col-2 px-0 pt-2">New:</p>
+          </Form.Group>          
         }
-          <Form.Group className="col-11" controlId="formPlaintextEmail">
+          <Form.Group
+          className={ action === 'edit' ? "col-11" : "col-12"}
+          controlId="formPlaintextEmail">
             <Form.Control
               plaintext
               //   readOnly={disabledDomicilio}
               className={styleInput}
               defaultValue={action === "edit" ? toDo?.bodyItem : ""}
-              placeholder="..."
+              placeholder="New Task..."
               rows={1}
               as="textarea"
               name="bodyItem"
@@ -113,10 +114,20 @@ export default function SingleTask({
           <i className="bi bi-trash-fill"></i>
         </Button>
         }{" "}
-        {save && (
+        {(save && action === 'edit' ) && (
           <Button
             onClick={(e) => handleSubmit(e)}
             className="btn-save ml-2"
+            variant="primary"
+            size="sm"
+          >
+            <i className="bi bi-save"></i>
+          </Button>
+        )}{" "}
+        { action === 'create' && (
+          <Button
+            onClick={(e) => handleSubmit(e)}
+            className="btn-save mr-2"
             variant="primary"
             size="sm"
           >

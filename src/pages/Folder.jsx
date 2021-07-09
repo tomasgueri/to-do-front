@@ -51,7 +51,7 @@ export default function Folder() {
         </div>
         <div className="row justify-content-around">
           {folders?.map((folder, index) => (
-            <SingleFolder folder={folder} key={index} />
+            <SingleFolder folder={folder} key={index} getFolders={getFolders} />
           ))}
         </div>
       </div>
