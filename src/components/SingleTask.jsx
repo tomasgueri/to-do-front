@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Form, Button } from "react-bootstrap";
 
@@ -12,6 +12,7 @@ export default function SingleTask({
   const [input, setInput] = useState();
   const [save, setSave] = useState(false);
   const [checkInput, setCheckInput] = useState(toDo?.check);
+  const [styleInput, setStyleInput] = useState(toDo?.check && 'text-decoration-line-through' )
 
   const handleChange = (e) => {
     setSave(true);
@@ -25,8 +26,10 @@ export default function SingleTask({
       let checkI = false;
       if (toDo?.check === true) {
         setCheckInput(false);
+        setStyleInput('')
       } else {
         setCheckInput(true);
+        setStyleInput('text-decoration-line-through')
         checkI = true;
       }
       const { name } = e.target;
@@ -49,8 +52,6 @@ export default function SingleTask({
   };
 
   const handleSubmit = async (event) => {
-    const form = event.currentTarget;
-    event.preventDefault();
     try {
       if (action === "edit") {
         const modifiedTask = { ...input, id: folderId, i: index };
@@ -70,6 +71,7 @@ export default function SingleTask({
     <>
       <div className="List">
         <Form onSubmit={handleSubmit} className="col-11 px-0 d-flex">
+        { action === 'edit' ? 
           <Form.Group className="pt-2 col-1" controlId="formBasicCheckbox">
             <Form.Check
               type="checkbox"
@@ -78,11 +80,14 @@ export default function SingleTask({
               checked={checkInput}
               onChange={(e) => handleChangeCheck(e)}
             />
-          </Form.Group>
+          </Form.Group> :
+          <p className="col-2 px-0 pt-2">New:</p>
+        }
           <Form.Group className="col-11" controlId="formPlaintextEmail">
             <Form.Control
               plaintext
               //   readOnly={disabledDomicilio}
+              className={styleInput}
               defaultValue={action === "edit" ? toDo?.bodyItem : ""}
               placeholder="..."
               rows={1}
@@ -96,6 +101,7 @@ export default function SingleTask({
         {/* <Button className="btn-action-task mr-1" variant="success" size="sm">
           <i className="bi bi-pencil-square"></i>
         </Button>{" "} */}
+        { action === 'edit' && 
         <Button
           className="btn-action-task"
           onClick={() => {
@@ -105,7 +111,8 @@ export default function SingleTask({
           size="sm"
         >
           <i className="bi bi-trash-fill"></i>
-        </Button>{" "}
+        </Button>
+        }{" "}
         {save && (
           <Button
             onClick={(e) => handleSubmit(e)}

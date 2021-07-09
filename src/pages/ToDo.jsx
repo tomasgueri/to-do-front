@@ -26,9 +26,9 @@ export default function ToDo() {
           <div className="col-12 col-md-6 mt-3">
             {
               folder.toDo?.map((toDo, index) => (
-                <SingleTask action="edit" toDo={toDo} folderId={id} index={index} getFolder={getFolder} />
+                <SingleTask action="edit" toDo={toDo} folderId={id} index={index} key={index + 1} getFolder={getFolder} />
               ))
-            }
+            } <br />
             { id && <SingleTask action="create" folderId={id} getFolder={getFolder} /> }
           </div>
         </div>

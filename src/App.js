@@ -4,7 +4,6 @@ import ToDo from "./pages/ToDo";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import NavReactB from "./components/NavReactB";
 import { Route, Switch } from "react-router-dom";
 
