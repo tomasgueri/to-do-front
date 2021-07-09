@@ -28,7 +28,7 @@ Backend:
 <br>
 
 ## Back-end repository
-[https://github.com/tomasgueri/to-do-back](/tomasgueri/to-do-back)
+[https://github.com/tomasgueri/to-do-back](https://github.com/tomasgueri/to-do-back)
 
 <br>
 <br>
