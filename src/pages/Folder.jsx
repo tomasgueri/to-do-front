@@ -8,6 +8,7 @@ export default function Folder() {
   const [folders, setFolders] = useState();
   const [input, setInput] = useState();
   const [show, setShow] = useState(false);
+  const [actionForm, setActionForm] = useState('crear')
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -46,7 +47,7 @@ export default function Folder() {
             onClick={handleShow}
             variant="outline-success"
           >
-            <i class="bi bi-folder-plus mr-2"></i> New Folder
+            <i className="bi bi-folder-plus mr-2"></i> New Folder
           </Button>{" "}
         </div>
         <div className="row justify-content-around">
