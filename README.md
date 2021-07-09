@@ -16,7 +16,8 @@ No script is required for the back-end.
 Frontend:
 - Step 1 Clone: GitHub https://github.com/tomasgueri/to-do-front.git
 - Step 2: npm i 
-- Step 3: npm start
+- Step 3: in the index.js comment line 9, uncomment line 10 and then save
+- Step 3: run 'npm start' in the console
 
 Backend: 
 - Step 1 Clone: GitHub https://github.com/tomasgueri/to-do-back
